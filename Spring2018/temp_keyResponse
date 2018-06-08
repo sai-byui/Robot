@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
+import pygame
+from pygame.locals import *
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -25,12 +27,22 @@ GPIO.setup(Motor2B, GPIO.OUT)
 #print("Stopping motor")
 #GPIO.output(Motor1A, GPIO.LOW)
 #GPIO.output(Motor2A, GPIO.LOW)
-
-
-
 # The getch method can determine which key has been pressed
 # by the user on the keyboard by accessing the system files
 # It will then return the pressed key as a variable
+pygame.init()
+
+screen = pygame.display.set_mode((630,630))
+
+while True:
+
+    
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP]:
+        print("hello")
+        motor1_forward()
+        motor2_forward()
+        
 
 def getch():
     fd = sys.stdin.fileno()
