@@ -5,7 +5,7 @@ import time
 motor.setup(busnum=1)
 pwm = input("What pwm to test: (q to quit): ")
 while pwm != 'q':
-    car_dir.setup(pwm)
+    car_dir.setup(pwm_default=pwm)
     car_dir.home()
     pwm = input("What pwm to test: (q to quit): ")
 
