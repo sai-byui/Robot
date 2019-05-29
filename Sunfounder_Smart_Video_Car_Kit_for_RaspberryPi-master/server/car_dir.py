@@ -5,12 +5,12 @@ import time                # Import necessary modules
 def Map(x, in_min, in_max, out_min, out_max):
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-def setup(busnum=None):
+def setup(busnum=None, pwm_default=450):
 	global leftPWM, rightPWM, homePWM, pwm
-	leftPWM = 400
-	homePWM = 450
-	rightPWM = 500
-	offset =0
+	leftPWM = pwm_default - 50
+	homePWM = pwm_default
+	rightPWM = pwm_default + 50
+	offset = 0
 	# try:
 	# 	for line in open('config'):
 	# 		if line[0:8] == 'offset =':

@@ -3,13 +3,15 @@ import car_dir
 import time
 
 motor.setup(busnum=1)
-car_dir.setup()
-car_dir.home()
-car_dir.test()
+pwm = input("What pwm to test: (q to quit): ")
+while pwm != 'q':
+    car_dir.setup(pwm)
+    car_dir.home()
+    pwm = input("What pwm to test: (q to quit): ")
 
-t = time.time()
-while time.time() < t + 5:
-    motor.setSpeed(50)
-    motor.motor0('True')
-    motor.motor1('True')
-motor.stop()
+# t = time.time()
+# while time.time() < t + 5:
+#     motor.setSpeed(50)
+#     motor.motor0('True')
+#     motor.motor1('True')
+# motor.stop()
