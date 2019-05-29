@@ -11,12 +11,12 @@ def setup(busnum=None):
 	homePWM = 450
 	rightPWM = 500
 	offset =0
-	try:
-		for line in open('config'):
-			if line[0:8] == 'offset =':
-				offset = int(line[9:-1])
-	except:
-		print 'config error'
+	# try:
+	# 	for line in open('config'):
+	# 		if line[0:8] == 'offset =':
+	# 			offset = int(line[9:-1])
+	# except:
+	# 	print 'config error'
 	leftPWM += offset
 	homePWM += offset
 	rightPWM += offset
@@ -57,14 +57,15 @@ def calibrate(x):
 	pwm.write(0, 0, 450+x)
 
 def test():
-	while True:
-		turn_left()
-		time.sleep(1)
-		home()
-		time.sleep(1)
-		turn_right()
-		time.sleep(1)
-		home()
+    while True:
+        turn_left()
+        time.sleep(1)
+        home()
+        time.sleep(1)
+        turn_right()
+        time.sleep(1)
+        home()
+        break
 
 if __name__ == '__main__':
 	setup()
