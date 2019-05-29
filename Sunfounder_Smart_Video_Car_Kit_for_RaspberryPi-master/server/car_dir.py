@@ -5,11 +5,11 @@ import time                # Import necessary modules
 def Map(x, in_min, in_max, out_min, out_max):
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-def setup(busnum=None, pwm_default=450):
+def setup(busnum=None):
 	global leftPWM, rightPWM, homePWM, pwm
-	leftPWM = pwm_default - 50
-	homePWM = pwm_default
-	rightPWM = pwm_default + 50
+	leftPWM = 250
+	homePWM = 300
+	rightPWM = 350
 	offset = 0
 	# try:
 	# 	for line in open('config'):
@@ -17,9 +17,9 @@ def setup(busnum=None, pwm_default=450):
 	# 			offset = int(line[9:-1])
 	# except:
 	# 	print 'config error'
-	leftPWM += offset
-	homePWM += offset
-	rightPWM += offset
+	# leftPWM += offset
+	# homePWM += offset
+	# rightPWM += offset
 	if busnum == None:
 		pwm = servo.PWM()                  # Initialize the servo controller.
 	else:
