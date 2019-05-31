@@ -15,7 +15,7 @@ for _ in range(3):
         while t + 3 > time.time():
             pass
         car_dir.turn_left()
-        while t + 6 > time.time():
+        while t + 6.2727272 > time.time():
             pass
         car_dir.home()
 
