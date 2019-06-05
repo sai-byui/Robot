@@ -27,6 +27,9 @@ while 1:
                 direction = -50
             elif event.key == K_d:
                 direction = 50
+            elif event.key == K_ESCAPE:
+                pygame.quit()
+                quit()
         elif event.type == pygame.KEYUP:
             if event.key == K_w or event.key == K_s:
                 motion = 0
@@ -36,5 +39,7 @@ while 1:
         c.backward(50)
     elif motion == 1:
         c.forward(50)
+    else:
+        c.stop()
 
     c.turn(direction)
