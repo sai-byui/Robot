@@ -53,6 +53,10 @@ def home():
 	global homePWM
 	pwm.write(0, 0, homePWM)
 
+def turn_car(amt):
+	global homePWM
+	pwm.write(0, 0, homePWM + min(max(amt, -50), 50));
+
 def calibrate(x):
 	pwm.write(0, 0, 450+x)
 
