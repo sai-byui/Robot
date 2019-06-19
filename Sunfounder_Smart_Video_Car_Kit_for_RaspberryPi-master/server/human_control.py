@@ -2,8 +2,14 @@
 import pygame
 from pygame.locals import *
 import car
+from picamera import PiCamera
+import datetime
+
 
 c = car.Car()
+cam = PiCamera()
+cam.vflip = True
+cam.hflip = True
 
 pygame.init()
 width, height = 1280, 1000
@@ -36,7 +42,7 @@ while 1:
             elif event.key == K_a or event.key == K_d:
                 direction = 0
             elif event.key == K_SPACE:
-                
+                camera.capture('home/pi/Pictures/image%s.jpg' % datetime.datetime.now())
     if motion == -1:
         c.backward(50)
     elif motion == 1:
