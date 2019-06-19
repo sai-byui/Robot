@@ -35,6 +35,8 @@ while 1:
                 motion = 0
             elif event.key == K_a or event.key == K_d:
                 direction = 0
+            elif event.key == K_SPACE:
+                
     if motion == -1:
         c.backward(50)
     elif motion == 1:
