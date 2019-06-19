@@ -10,6 +10,7 @@ c = car.Car()
 cam = PiCamera()
 cam.vflip = True
 cam.hflip = True
+cam.start_preview()
 
 pygame.init()
 width, height = 1280, 1000
