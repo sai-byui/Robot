@@ -43,7 +43,7 @@ while 1:
             elif event.key == K_a or event.key == K_d:
                 direction = 0
             elif event.key == K_SPACE:
-                cam.capture('home/pi/Pictures/image%s.jpg' % datetime.datetime.now())
+                cam.capture('/home/pi/Pictures/image%s.jpg' % datetime.datetime.now())
     if motion == -1:
         c.backward(50)
     elif motion == 1:
