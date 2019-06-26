@@ -11,7 +11,7 @@ c = car.Car()
 cam = PiCamera()
 cam.vflip = True
 cam.hflip = True
-cam.shutter_speed = 5
+//cam.shutter_speed = 5
 cam.start_preview()
 
 pygame.init()
@@ -47,10 +47,10 @@ while 1:
                 direction = 0
             elif event.key == K_SPACE:
                 cam.capture('/home/pi/Pictures/image%s.jpg' % datetime.datetime.now())
-            elif event.key == K_UP:
-                cam.shutter_speed += 1
-            elif event.key == K_DOWN:
-                cam.shutter_speed = max(0, cam.shutter_speed - 1)
+            # elif event.key == K_UP:
+            #     cam.shutter_speed += 1
+            # elif event.key == K_DOWN:
+            #     cam.shutter_speed = max(0, cam.shutter_speed - 1)
             # elif event.key == K_LEFT:
             #     cam.iso = max(0, cam.iso - 1)
             # elif event.key == K_RIGHT:
