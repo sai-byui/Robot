@@ -11,7 +11,7 @@ c = car.Car()
 cam = PiCamera()
 cam.vflip = True
 cam.hflip = True
-//cam.shutter_speed = 5
+#cam.shutter_speed = 5
 cam.start_preview()
 
 pygame.init()
