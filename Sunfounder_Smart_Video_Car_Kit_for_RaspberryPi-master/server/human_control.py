@@ -2,7 +2,7 @@
 import pygame
 from pygame.locals import *
 import car
-from picamera import PiCamera, mmal
+from picamera import PiCamera
 import datetime
 
 
@@ -11,7 +11,7 @@ c = car.Car()
 cam = PiCamera()
 cam.vflip = True
 cam.hflip = True
-cam.shutter_speed = 1
+cam.shutter_speed = 5
 cam.start_preview()
 
 pygame.init()
@@ -51,10 +51,10 @@ while 1:
                 cam.shutter_speed += 1
             elif event.key == K_DOWN:
                 cam.shutter_speed = max(0, cam.shutter_speed - 1)
-            elif event.key == K_LEFT:
-                cam.iso = max(0, cam.iso - 1)
-            elif event.key == K_RIGHT:
-                cam.iso += 1
+            # elif event.key == K_LEFT:
+            #     cam.iso = max(0, cam.iso - 1)
+            # elif event.key == K_RIGHT:
+            #     cam.iso += 1
     if motion == -1:
         c.backward(50)
     elif motion == 1:
