@@ -14,6 +14,8 @@ cam.hflip = True
 #cam.shutter_speed = 5
 cam.start_preview()
 
+speed = 0
+
 pygame.init()
 width, height = 1280, 1000
 screen=pygame.display.set_mode((width, height))
@@ -41,10 +43,12 @@ while 1:
                 pygame.quit()
                 quit()
             elif event.key == K_UP:
-                cam.shutter_speed += 1
+                speed = speed + 1
+                cam.shutter_speed = speed
                 print("Shutter speed set to " + str(cam.shutter_speed))
             elif event.key == K_DOWN:
-                cam.shutter_speed = max(0, cam.shutter_speed - 1)
+                speed = max(0, speed - 1)
+                cam.shutter_speed = speed
                 print("Shutter speed set to " + str(cam.shutter_speed))
             elif event.key == K_LEFT:
                 cam.iso = max(0, cam.iso - 1)
