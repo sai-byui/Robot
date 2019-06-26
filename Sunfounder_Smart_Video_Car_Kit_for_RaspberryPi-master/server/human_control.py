@@ -40,6 +40,14 @@ while 1:
             elif event.key == K_ESCAPE:
                 pygame.quit()
                 quit()
+            elif event.key == K_UP:
+                cam.shutter_speed += 1
+            elif event.key == K_DOWN:
+                cam.shutter_speed = max(0, cam.shutter_speed - 1)
+            elif event.key == K_LEFT:
+                cam.iso = max(0, cam.iso - 1)
+            elif event.key == K_RIGHT:
+                cam.iso += 1
         elif event.type == pygame.KEYUP:
             if event.key == K_w or event.key == K_s:
                 motion = 0
@@ -47,14 +55,6 @@ while 1:
                 direction = 0
             elif event.key == K_SPACE:
                 cam.capture('/home/pi/Pictures/image%s.jpg' % datetime.datetime.now())
-            # elif event.key == K_UP:
-            #     cam.shutter_speed += 1
-            # elif event.key == K_DOWN:
-            #     cam.shutter_speed = max(0, cam.shutter_speed - 1)
-            # elif event.key == K_LEFT:
-            #     cam.iso = max(0, cam.iso - 1)
-            # elif event.key == K_RIGHT:
-            #     cam.iso += 1
     if motion == -1:
         c.backward(50)
     elif motion == 1:
