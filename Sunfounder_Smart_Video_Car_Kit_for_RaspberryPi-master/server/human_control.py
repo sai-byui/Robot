@@ -10,6 +10,7 @@ c = car.Car()
 cam = PiCamera()
 cam.vflip = True
 cam.hflip = True
+cam.shutter_speed = 1
 cam.start_preview()
 
 pygame.init()
@@ -18,6 +19,7 @@ screen=pygame.display.set_mode((width, height))
 motion = 0 # -1 for backward, 1 for forward
 direction = 0 # -50 for left, 50 for right, in between for lesser angles
 playerpos=[100,100]
+
 
 
 while 1:
@@ -44,6 +46,7 @@ while 1:
                 direction = 0
             elif event.key == K_SPACE:
                 cam.capture('/home/pi/Pictures/image%s.jpg' % datetime.datetime.now())
+                cam.shutter_speed += 5
     if motion == -1:
         c.backward(50)
     elif motion == 1:
