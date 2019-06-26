@@ -42,10 +42,10 @@ while 1:
                 quit()
             elif event.key == K_UP:
                 cam.shutter_speed += 1
-                print("Shutter speed set to " + cam.shutter_speed)
+                print("Shutter speed set to " + str(cam.shutter_speed))
             elif event.key == K_DOWN:
                 cam.shutter_speed = max(0, cam.shutter_speed - 1)
-                print("Shutter speed set to " + cam.shutter_speed)
+                print("Shutter speed set to " + str(cam.shutter_speed))
             elif event.key == K_LEFT:
                 cam.iso = max(0, cam.iso - 1)
             elif event.key == K_RIGHT:
